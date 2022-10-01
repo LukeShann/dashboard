@@ -19,7 +19,7 @@ a {
 }
 
 /* global styles */
-.grid-container {
+.page-container {
   display: grid;
   grid-template-rows:  minmax(8rem, 1fr) 6fr;
   grid-template-columns: minmax(16rem, 1fr) 3fr;
@@ -41,15 +41,40 @@ a {
   display: flex;
   flex-direction: column;
   padding: 1em;
-  gap: 2rem;
+  gap: 3rem;
 
   background-color: red;
 }
 
-.sidebar .logo {
- height: 1.5em;
+.side-section {
+  display: grid;
+  gap: 1em;
 }
 
+.sidebar > ul {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.75em;
+}
+
+.sidebar li, .side-section:first-child {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+
+.title .logo {
+  font-size: 2em;
+}
+
+.logo {
+  height: 1.5em;
+}
+
+[src="icons/rocket.svg"] {
+  font-size: 2em;
+}
 /* content styles */
 .content {
   background-color: yellow;
