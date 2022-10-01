@@ -1,5 +1,5 @@
 /* general elements */
-html, body, h1, h2, ul {
+html, body, h1, h2, h3, ul {
   margin: 0;
   padding: 0;
 }
@@ -7,10 +7,6 @@ html, body, h1, h2, ul {
 body {
   height: 100vh;
   width: 100%;
-}
-
-.responsive-text {
-  font-size: calc(20px + (26 - 14) * ((100vw - 300px) / (1600 - 300)))
 }
 
 h1 {
@@ -49,10 +45,14 @@ input[type="reset"] {
   grid-template-rows: minmax(8rem, 1fr) 6fr;
   grid-template-columns: minmax(12rem, 1fr) 4fr;
   height: 100%;
-
+  
   /* to make testing easier */
   resize: both;
   overflow: auto;
+}
+
+.responsive-text {
+  font-size: calc(20px + (26 - 14) * ((100vw - 300px) / (1600 - 300)))
 }
 
 .icon {
@@ -180,6 +180,31 @@ input[type="reset"] {
 
 /* content styles */
 .content {
-  background-color: yellow;
   grid-area: 2 / 2 / -1 / -1;
+  display: grid;
+  grid-template: 1fr 1fr / 3fr 1fr;
+  gap: 1em;
+  padding: 1em;
+  
+  background-color: yellow;
+}
+
+.labeled-section {
+  display: grid;
+  grid-template-rows: 2em 1fr;
+
+  border: 3px solid black;
+}
+
+.projects {
+  grid-area: 1 / 1 / 3 / 2;
+}
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+  gap: 1em;
+}
+
+.card {
+  background-color: aquamarine;
 }
