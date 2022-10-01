@@ -1,5 +1,5 @@
 /* general elements */
-html, body, h1, ul {
+html, body, h1, h2, ul {
   margin: 0;
   padding: 0;
 }
@@ -7,6 +7,18 @@ html, body, h1, ul {
 body {
   height: 100vh;
   width: 100%;
+}
+
+.responsive-text {
+  font-size: calc(20px + (26 - 14) * ((100vw - 300px) / (1600 - 300)))
+}
+
+h1 {
+  font-size: 1em;
+}
+
+h2 {
+  font-size: 0.75em;
 }
 
 li {
@@ -18,21 +30,115 @@ a {
   color: inherit;
 }
 
+/* button reset snippet from Kevin Leary https://stackoverflow.com/questions/2460100/remove-the-complete-styling-of-an-html-button-submit */
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 /* global styles */
 .page-container {
   display: grid;
-  grid-template-rows:  minmax(8rem, 1fr) 6fr;
-  grid-template-columns: minmax(16rem, 1fr) 3fr;
+  grid-template-rows: minmax(8rem, 1fr) 6fr;
+  grid-template-columns: minmax(12rem, 1fr) 4fr;
   height: 100%;
 
+  /* to make testing easier */
   resize: both;
   overflow: auto;
 }
 
+.icon {
+  height: 1.5em;
+}
+
+.profile-picture {
+  background-color: orange;
+  border-radius: 50%;
+}
+
 /* header styles */
 .header {
-  background-color: blue;
   grid-area: 1 / 2 / 2 / -1;
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+  padding-left: 1em;
+  padding-right: 1em;
+  
+  background-color: blue;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 0.5em;
+}
+
+.header-top .icon {
+  height: 1em;
+}
+
+.header-top .profile-picture {
+  height: 2em;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-self: flex-start;
+  flex-grow: 1;
+  gap: 0.5em;
+}
+
+.search-bar form {
+  display: flex;
+}
+
+.search-bar input {
+  border: 0;
+  border-radius: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  flex: 1;
+  margin-right: 20%;
+}
+
+/* header bottom */
+.header-bottom {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: stretch;
+  height: 100%;
+  font-size: 0.7em;
+}
+
+.header-bottom .profile-picture {
+  max-height: 3.5rem;
+}
+
+.header-bottom > ul {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  gap: 5%;
+}
+
+.header-bottom > ul > li {
+  background-color: yellow;
+  padding: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-radius: 2em;
 }
 
 /* sidebar styles */
@@ -57,26 +163,23 @@ a {
   padding-left: 0.75em;
 }
 
-.sidebar li, .side-section:first-child {
+.sidebar li,
+.side-section:first-child {
   display: flex;
-  gap: 1em;
   align-items: center;
+  gap: 1em;
 }
 
-
-.title .logo {
-  font-size: 2em;
-}
-
-.logo {
-  height: 1.5em;
+.side-section h1 {
+  margin-left: -0.5em;
 }
 
 [src="icons/rocket.svg"] {
-  font-size: 2em;
+  font-size: 1em;
 }
+
 /* content styles */
 .content {
   background-color: yellow;
-  grid-area: 2 / 2 / -1 / -1 ;
+  grid-area: 2 / 2 / -1 / -1;
 }
