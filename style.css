@@ -46,6 +46,10 @@ a {
   background-color: red;
 }
 
+.sidebar .logo {
+ height: 1.5em;
+}
+
 /* content styles */
 .content {
   background-color: yellow;
