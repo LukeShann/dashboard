@@ -1,0 +1,53 @@
+/* general elements */
+html, body, h1, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* global styles */
+.grid-container {
+  display: grid;
+  grid-template-rows:  minmax(8rem, 1fr) 6fr;
+  grid-template-columns: minmax(16rem, 1fr) 3fr;
+  height: 100%;
+
+  resize: both;
+  overflow: auto;
+}
+
+/* header styles */
+.header {
+  background-color: blue;
+  grid-area: 1 / 2 / 2 / -1;
+}
+
+/* sidebar styles */
+.sidebar {
+  grid-area: 1 / 1 / -1 / 2;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  gap: 2rem;
+
+  background-color: red;
+}
+
+/* content styles */
+.content {
+  background-color: yellow;
+  grid-area: 2 / 2 / -1 / -1 ;
+}
