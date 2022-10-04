@@ -1,16 +1,15 @@
-/* general elements */
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700&display=swap');
 
+/* color theme */
 :root {
   --banner-color: #437C90;
   --light-white: #f0efe9;
   --off-white: #b6a279;
   --card-detail: #31572C;
   --separator: grey;
-  
 }
 
+/* general elements */
 html, body, h1, h2, h3, h4, ul, p {
   margin: 0;
   padding: 0;
@@ -23,12 +22,10 @@ body {
 }
 
 h1 {
-  font-size: 1em;
   font-weight: 700;
 }
 
 h2 {
-  font-size: 0.75em;
   font-weight: 500;
 }
 
@@ -66,16 +63,8 @@ input[type="reset"] {
 .page-container {
   display: grid;
   height: 100%;
-  grid-template-rows: 8rem 1fr;
-  grid-template-columns: minmax(12rem, 1fr) 4fr;
-
-  /* to make testing easier */
-  resize: both;
-  overflow: auto;
-}
-
-.responsive-text {
-  font-size: calc(20px + (26 - 14) * ((100vw - 300px) / (1600 - 300)))
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: minmax(min-content, 1fr) 4fr;
 }
 
 .icon {
@@ -95,6 +84,8 @@ input[type="reset"] {
   padding-left: 1em;
   padding-right: 1em;
   background-color: var(--light-white);
+  filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));
+  z-index: 1;
 }
 
 .header-top {
@@ -121,8 +112,9 @@ input[type="reset"] {
   gap: 0.5em;
 }
 
-.search-bar form {
+.search-bar form, .search-bar button {
   display: flex;
+  align-items: center;
 }
 
 .search-bar input {
@@ -132,6 +124,7 @@ input[type="reset"] {
   padding-right: 0.5em;
   flex: 1;
   margin-right: 20%;
+  background-color: var(--off-white);
 }
 
 /* header bottom */
@@ -157,6 +150,7 @@ input[type="reset"] {
 
 .header-bottom > ul > li {
   background-color: var(--banner-color);
+  color: var(--light-white);
   padding: 1em;
   padding-left: 2em;
   padding-right: 2em;
@@ -171,6 +165,7 @@ input[type="reset"] {
   padding: 1em;
   gap: 3rem;
   background-color: var(--banner-color);
+  z-index: 2;
 }
 
 .side-section {
@@ -196,14 +191,13 @@ input[type="reset"] {
 }
 
 [src="icons/rocket.svg"] {
-  font-size: 1em;
+  font-size: 2rem;
 }
 
 /* content styles */
 .content {
   grid-area: 2 / 2 / -1 / -1;
   display: grid;
-  /* grid-template-rows: 35vh 35vh min-content; */
   grid-template-rows: min-content min-content 1fr;
   grid-template-columns: 3fr minmax(12em, 1fr);
   gap: 1em;
@@ -213,7 +207,7 @@ input[type="reset"] {
 
 .labeled-section {
   display: grid;
-  grid-template-rows: 1.5em 1fr;
+  grid-template-rows: 2em 1fr;
 }
 
 .projects {
@@ -234,6 +228,7 @@ input[type="reset"] {
   display: grid;
   grid-template-rows: auto 1fr 2em;
   gap: 0.5em;
+  box-shadow: 3px 3px 3px rgba(0,0,0,.5);
 }
 
 .card-buttons {
@@ -248,6 +243,7 @@ input[type="reset"] {
   display: grid;
   min-height: 0;
   font-size: 0.8em;
+  box-shadow: 3px 3px 3px rgba(0,0,0,.5);
 }
 
 .announcement {
@@ -275,7 +271,9 @@ input[type="reset"] {
   padding: 1em;
   border-radius: 0.5rem;
   background-color: var(--light-white);
+  box-shadow: 3px 3px 3px rgba(0,0,0,.5);
 }
+
 .twitter-container {
   display: grid;
   grid-template-areas: 'picture handle' 'picture tagline';
